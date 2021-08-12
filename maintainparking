@@ -1,0 +1,85 @@
+#include<stdio.h>
+#include<conio.h>
+int menu();
+void bus();
+void cycle();
+void Riksha();
+void ShowDetail();
+void delete();
+int nor=0,nob=0,noc=0,amount=0,count=0;
+void main()
+{
+while(1)
+{
+switch(menu())
+{
+case 1:
+bus();
+break;
+case 2:
+cycle();
+break;
+case 3:
+Riksha();
+break;
+case 4:
+ShowDetail();
+break;
+case 5:
+delete();
+break;
+case 6:exit(0);
+default:
+printf("\n Invalid Choice");
+}
+}
+getch();
+}
+int menu()
+{ int ch;
+printf("\n1. Enter BUS:");
+printf("\n1. Enter CYCLE:");
+printf("\n1. Enter Riksha:");
+printf("\n1. show status:");
+printf("\n1. delete data:");
+printf("\nenter choice");
+scanf("%d",&ch);
+return ch;
+}
+void ShowDetail()
+{
+printf("\n number of bus:%d",nob);
+printf("\n number of cycke:%d",noc);
+printf("\n number of rikshaw:%d",nor);
+printf("\n Total No. of vehicle:%d",count);
+printf("\n Total amount gained=%d",amount);
+}
+void delete()
+{
+nob=0;
+nor=0;
+noc=0;
+amount=0;
+count=0;
+}
+void Riksha()
+{
+printf("\n entry succesful");
+nor++;
+amount=amount+50;
+count++;
+}
+void cycle()
+{
+printf("\n entry succesful");
+noc++;
+amount=amount+20;
+count++;
+}
+void bus()
+{
+printf("\n entry succesful");
+nob++;
+amount=amount+100;
+count++;
+}
